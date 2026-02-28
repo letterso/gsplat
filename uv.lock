@@ -271,6 +271,7 @@ name = "examples"
 version = "0.1.0"
 source = { virtual = "examples" }
 dependencies = [
+    { name = "fused-bilagrid" },
     { name = "fused-ssim" },
     { name = "gsplat" },
     { name = "imageio", extra = ["ffmpeg"] },
@@ -295,7 +296,8 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "fused-ssim", git = "https://github.com/rahul-goel/fused-ssim?rev=897999e3b1c4c09233e5b00c2621df757a2c6560" },
+    { name = "fused-bilagrid", git = "https://github.com/harry7557558/fused-bilagrid?rev=90f9788e57d3545e3a033c1038bb9986549632fe" },
+    { name = "fused-ssim", git = "https://github.com/rahul-goel/fused-ssim?rev=328dc9836f513d00c4b5bc38fe30478b4435cbb5" },
     { name = "gsplat", editable = "." },
     { name = "imageio", extras = ["ffmpeg"], specifier = ">=2.37.2" },
     { name = "jaxtyping", specifier = ">=0.3.9" },
@@ -377,13 +379,14 @@ wheels = [
 ]
 
 [[package]]
+name = "fused-bilagrid"
+version = "0.0.0"
+source = { git = "https://github.com/harry7557558/fused-bilagrid?rev=90f9788e57d3545e3a033c1038bb9986549632fe#90f9788e57d3545e3a033c1038bb9986549632fe" }
+
+[[package]]
 name = "fused-ssim"
-version = "1.0.0"
-source = { git = "https://github.com/rahul-goel/fused-ssim?rev=897999e3b1c4c09233e5b00c2621df757a2c6560#897999e3b1c4c09233e5b00c2621df757a2c6560" }
-dependencies = [
-    { name = "torch", version = "2.10.0", source = { registry = "https://pypi.org/simple" }, marker = "sys_platform != 'linux' and sys_platform != 'win32'" },
-    { name = "torch", version = "2.10.0+cu128", source = { registry = "https://download.pytorch.org/whl/cu128" }, marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
-]
+version = "0.0.0"
+source = { git = "https://github.com/rahul-goel/fused-ssim?rev=328dc9836f513d00c4b5bc38fe30478b4435cbb5#328dc9836f513d00c4b5bc38fe30478b4435cbb5" }
 
 [[package]]
 name = "grpcio"
