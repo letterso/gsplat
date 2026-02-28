@@ -23,6 +23,24 @@ gsplat is an open-source library for CUDA accelerated rasterization of gaussians
 
 ## Installation
 
+For local development in this repo, we now recommend using [uv](https://docs.astral.sh/uv/).
+
+```bash
+# from repo root
+uv sync
+```
+
+This project is configured as a uv workspace (root package + `examples`) and includes an explicit PyTorch CUDA index in `pyproject.toml`.
+
+If you also want all workspace packages and optional groups, run:
+
+```bash
+uv sync --all-packages --all-extras
+```
+
+<details>
+<summary>Legacy pip installation options (PyPI / source / prebuilt wheels)</summary>
+
 **Dependence**: Please install [Pytorch](https://pytorch.org/get-started/locally/) first.
 
 The easiest way is to install from PyPI. In this way it will build the CUDA code **on the first run** (JIT).
@@ -44,6 +62,8 @@ pip install gsplat --index-url https://docs.gsplat.studio/whl/pt20cu118
 ```
 
 To build gsplat from source on Windows, please check [this instruction](docs/INSTALL_WIN.md).
+
+</details>
 
 ## Evaluation
 
